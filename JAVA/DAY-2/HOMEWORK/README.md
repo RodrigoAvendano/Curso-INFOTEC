@@ -189,7 +189,7 @@ public class Ejemplo3{
 
 Esto arrojará un resultado como el siguiente :
 
-![img1](imgs/"terminal.png")
+![img1](https://github.com/RodrigoAvendano/Curso-INFOTEC/blob/main/JAVA/DAY-2/HOMEWORK/imgs/terminal.png)
   
 ## 4. Elabora un programa usando los diferentes operadores aritméticos vistos en clase, asigna los resultados de estas operaciones a distintas variables e imprima en consola los resultados usando estas variables.
 
@@ -232,7 +232,7 @@ public class Ejemplo3{
 
 Obtendremos un resultado como el siguiente :
 
-![img2](imgs/"operaciones.png")
+![img2](https://github.com/RodrigoAvendano/Curso-INFOTEC/blob/main/JAVA/DAY-2/HOMEWORK/imgs/operaciones.png) 
 
 ## 5. Elabora un fragmento de código dónde realices 6 conversiones de tipos de datos ( 3 de manera implícita y 3 de manera explícita) e imprime en consola los resultados.
 
@@ -265,7 +265,7 @@ System.out.println("X: " + x + ", Y: "+ y +", Z: "+z);
 ```
 Resultado:
 
-![img3](imgs/"conversion.png")
+![img3](https://github.com/RodrigoAvendano/Curso-INFOTEC/blob/main/JAVA/DAY-2/HOMEWORK/imgs/conversion.png)
 
 ### Fuentes
 1. [Bucle For](https://javautodidacta.es/bucle-for-java/).
