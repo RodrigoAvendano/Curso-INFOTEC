@@ -17,5 +17,7 @@ public class Captura {
         int edad = lectura.nextInt();
 
         System.out.println("Su nombre es: " + nombre + " y su edad es: " + edad);
+
+        lectura.close();
     }
 }

@@ -28,5 +28,7 @@ public class Operadores {
         "\nResta: " + resta + 
         "\nMultiplicación: " + mult + 
         "\nDivisión: " + div + "\n");
+
+        lectura.close();
     }
 }
