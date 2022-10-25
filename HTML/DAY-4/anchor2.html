@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My SQL</title>
+</head>
+<body>
+    <a name="introduccion"></a>
+    <h2>Introducción</h2>
+    <p>MySQL es un sistema de gestión de bases de datos que cuenta con una doble licencia. 
+        Por una parte es de código abierto, pero por otra, cuenta con una versión comercial 
+        gestionada por la compañía Oracle.
+    </p>
+    <p>
+        MySQL presenta algunas ventajas que lo hacen muy interesante para los desarrolladores. 
+        La más evidente es que trabaja con bases de datos relacionales, es decir, utiliza tablas 
+        múltiples que se interconectan entre sí para almacenar la información y organizarla 
+        correctamente.<br/>
+        Al ser basada en código abierto es fácilmente accesible y la inmensa mayoría de 
+        programadores que trabajan en desarrollo web han pasado usar MySQL en alguno de sus 
+        proyectos porque al estar ampliamente extendido cuenta además con una ingente comunidad que 
+        ofrece soporte a otros usuarios
+    </p>
+    <p>
+        MySQL es el sistema de gestión de bases de datos relacional más extendido en la actualidad al 
+        estar basada en código abierto. Desarrollado originalmente por MySQL AB, fue adquirida por 
+        Sun MicroSystems en 2008 y esta su vez comprada por Oracle Corporation en 2010, la cual ya era 
+        dueña de un motor propio InnoDB para MySQL.
+    </p>
+    <a name="mostrarbd"></a>
+    <h2>Mostrar Base de Datos</h2>
+    <p>    
+        Una base de datos se define como un conjunto de datos organizados, los cuales guardan una cierta 
+        relación entre sí. Así, los sistemas de información se encargan de recolectarlos y, posteriormente, 
+        gestionarlos y administrarlos para unos objetivos concretos.<br/>
+        Desde el lado de la informática, la base de datos se conoce como un sistema conformado por un 
+        abanico de datos almacenados en distintos discos, físicos o virtuales, que permiten el acceso 
+        directo a los mismos y un software capaz de manipular dichos datos.<br/>
+        Al administrar los servidores de bases de datos MySQL , una de las tareas más comunes que tendrá 
+        que hacer es familiarizarse con el entorno. Esto involucra tareas como listar bases de datos que 
+        residen en este servidor, mostrar las tablas de una base de datos particular u obtener información 
+        sobre las cuentas de usuario y sus privilegios.
+        Crear base de datos MySQL es un proceso relativamente sencillo, por lo que no se necesitan conocimientos 
+        técnicos avanzados para realizarlo. A continuación explicamos paso a paso cómo crear una base de datos en MySQL.
+
+        En primer lugar es importante asegurarse de que el servidor MySQL está conectado. De lo contrario, la creación de la 
+        base de datos es imposible.
+        A continuación se copia la ruta de instalación de la carpeta. Dicha ruta puede variar en función de si se va a hacer 
+        uso de Windows o Mac. En caso de Windows, se copia “C:/Program Files/MySQL/MySQL Workbench 8.0 CE/”. Si el SO 
+        es iOS, se copia “/usr/local/mysql-8.0.13-osx10.13-x86_64/”.
+        El siguiente paso consiste en abrir la línea de comandos del ordenador. En un PC se abre “Símbolo del Sistema”. 
+        En caso de Mac, “Terminal”.
+        Ahora es el momento de crear el archivo de la base de datos. Para ello, se escribe el comando de creación de base 
+        de datos “create database” y se le agrega el nombre que se le quiera asignar, seguido de un punto y coma; por último, se pulsa 
+        “Enter”. Por ejemplo si la base de datos se quiere denominar “Registro de clientes”, se escribe 
+        “Create Database Registro_de_clientes;”
+    </p>
+
+    <a name="creaciontable"></a>
+    <h2>Creación de Tablas</h2>
+    <p>
+        Cada base de datos se compone e una o varias tablas, las cuales guardan un grupo de datos. 
+        Cada tabla se conforma de una o más columnas y filas. De este modo, cada columna almacena una 
+        parte de la información acerca de cada elemento que se desee guardar en la tabla, mientras que 
+        cada fila de la tabla compone un registro.<br/>
+        En primer lugar se crea la estructura de la propia tabla. El comando es el siguiente.
+
+        CREATE TABLE nombre (columna1 VARCHAR(20), columna2)
+        Así, si por ejemplo la tabla llamada “Registro de clientes” desea agregar dos columnas: lugar de residencia y edad, se debe escribir 
+        lo siguiente.<br/>
+
+        CREATE TABLE Registro de clientes (Lugar de residencia VARCHAR(20), Edad VARCHAR(30),
+        A continuación se añade una línea a la tabla. Para añadir información, línea por línea, a la base de datos se utiliza el 
+        comando “insert”.<br/>
+
+        Siguiendo con el ejemplo anterior, la línea queda de la siguiente manera: INSERT INTO Registro de clientes VALUES ('Madrid', '30');<br/>
+        A continuación se registran el resto de datos que van a conformar la base de datos MySQL. Para visualizar la tabla se ingresa el comando 
+        “show databases;” y a continuación se selecciona la base de datos escribiendo “select * from nombre”. “Nombre” representa el nombre dela 
+        base de datos.
+    </p>
+    <a name="cargareg"></a>
+    <h2>Cargar registros</h2>
+    <p>
+        La instrucción SELECT en SQL se usa para recuperar datos de una base de datos relacional.<br/>
+        <table border="1">
+            <tr>
+                <th>Número de Columnas</th>
+                <th>Síntaxis</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>SELECT "column_name" FROM "table_name";</td>
+            </tr>
+            <tr>
+                <td>Más de una columna</td>
+                <td>SELECT "column_name1", "column_name2" FROM "table_name";</td>
+            </tr>
+            <tr>
+                <td>Todas las columnas</td>
+                <td>SELECT * FROM "table_name";</td>
+            </tr>
+        </table>
+        <br/>
+        "table_name" es el nombre de la tabla donde se almacenan los datos, y "column_name" es el nombre de la columna que 
+        contiene los datos que se recuperarán.
+
+        Para seleccionar más de una columna, agregue una coma al nombre de la columna anterior y luego agregue 
+        el nombre de la columna. Si está seleccionando tres columnas, la sintaxis será,<br/>
+        
+        SELECT "column_name1", "column_name2", "column_name3" FROM "table_name";</p>
+</body>
+</html>

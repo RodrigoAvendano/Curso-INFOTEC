@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con JS</title>
+</head>
+<body>
+    <form>
+        <p>Ingrese su nombre : <input type="text" id="nombre"></p>
+        <p>Ingrese su edad : <input type="number" id="edad"></p>
+        Ingrese una clave : 
+        <input type="password" id="clave">
+        <br/>
+        <p>
+            <select id="select1" onchange="cambiarColor()">
+                <option value="ff0000">Rojo</option>   <!--0-->
+                <option value="00ff00">Verde</option>  <!--1-->
+                <option value="0000ff">Azul</option>   <!--2-->
+            </select>
+        </p>
+        <p>Número de indíce seleccionado del objeto SELECT: <input type="text" id="text1"></p>
+        <p>Texto seleccionado: <input type="text" id="text2"></p>
+        <p>Valor asociado: <input type="text" id="text3"></p>
+        <p><input type="button" value="Confirmar" onclick="Mostrar()"></p>
+    </form>
+    <script>
+        function Mostrar() {
+            let nom = document.getElementById('nombre').value;
+            let ed = document.getElementById('edad').value;
+            let clave =  document.getElementById('clave').value; 
+            if (clave.length < 5) {
+                alert("La clave no puede tener menos de 5 caracteres");
+            } else {
+                alert(`Largo de la clave correcta\nIngresó el nombre ${nom}\nY la edad ${ed}`);
+            }         
+        }
+
+        function cambiarColor() {
+            let seleccion = document.getElementById('select1');
+            document.getElementById('text1').value = seleccion.selectedIndex;
+            document.getElementById('text2').value = seleccion.options[seleccion.selectedIndex].text;
+            document.getElementById('text3').value = seleccion.options[seleccion.selectedIndex].value;
+        }
+    </script>
+</body>
+</html>
