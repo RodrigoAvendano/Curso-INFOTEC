@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lables en bucle</title>
+</head>
+<body>
+    <script>
+        let i,j;
+        loop1 :
+            for(i = 0; i < 3; i++){
+                loop2:
+                    for(j=0; j<3; j++) {
+                        if(i === 1 && j === 1){
+                            continue loop1;
+                        }
+                        console.log(`i = ${i} - j = ${j}`);
+                    }
+            }
+
+        //EJEMPLO 2
+        let itemsPassed = 0;
+        
+        top:
+        for(i = 0; i < items.length; i++){
+            for(j=0; j<test.length; j++) {
+                if(!test[j].pass(items[i])){
+                    continue top;
+                }
+            }
+            itemsPassed++;
+        }
+
+    </script>
+</body>
+</html>

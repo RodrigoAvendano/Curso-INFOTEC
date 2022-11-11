@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle of</title>
+</head>
+<body>
+    <script>
+        const personas = [{
+            nombre : 'Juan',
+            edad : 45
+        },
+        {
+            nombre : 'Ana',
+            edad : 12
+        }, 
+        {
+            nombre : 'Luis',
+            edad : 16
+        },
+        {
+            nombre : 'Cristina',
+            edad : 76
+        }];
+        document.write("<h1>Personas mayores de 18 años</h1>");
+        for(let persona of personas){
+            if(persona.edad >= 18){
+                document.write(`${persona.nombre} tiene ${persona.edad} años</br>`);
+            }
+        }
+
+        const vector = [10,40,60,5];
+        for(let [indice,valor] of vector.entries()) {
+            document.write(`${valor} ocupa la posicion ${indice} </br>`);
+        }
+    </script>
+    
+</body>
+</html>

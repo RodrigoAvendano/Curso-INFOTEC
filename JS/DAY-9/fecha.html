@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Or</title>
+</head>
+<body>
+    <script>
+        let dia, mes, anio;
+        dia = parseInt(prompt('Ingrese día'));
+        mes = parseInt(prompt('Ingrese mes'));
+        anio = parseInt(prompt('Ingrese año'));
+
+        if(mes <= 3) {
+            document.write("El mes corresponde al primer trimestre del año");
+        } else {
+            if(mes >3 && mes <=6) {
+                document.write("El mes corresponde al segundo trimestre del año");
+            } else if (mes >6 && mes <=9) {
+                document.write("El mes corresponde al tercer trimestre del año");
+            } else {
+                document.write("El mes corresponde al último trimestre del año");
+            }
+        }
+        nwdia = agregarCero(dia);
+        nwmes = agregarCero(mes);
+
+        document.write(`<br/>${nwdia} - ${nwmes} - ${anio}`);
+
+        function agregarCero(fecha){
+            let newFecha = fecha.toString();
+            
+            let newNum;
+            if(newFecha.length == 1){
+                newNum = "0"+newFecha;
+                console.log(newNum)   
+            } else {
+                newNum = fecha;
+            }
+            return newNum;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do - While</title>
+</head>
+<body>
+    <script>
+        let valor = 0;
+        let suma = 0;
+        let re = /[(0-9)]/;
+        let estado = true;
+        do {
+            valor = parseInt(prompt("Ingrese un valor entero\nPara detener el programa ingrese 9999"));
+            estado = re.test(valor);
+            if(estado) {
+                if(valor != 9999){
+                    suma += valor;
+                }
+            } else {
+                alert("No ha ingresado un número entero");
+            }
+        } while (valor != 9999);
+        document.write("Valor acumulado "+suma+"<br>");
+        if(suma > 0) {
+            document.write("El valor acumulado es mayor a 0");
+        } else {
+            if(suma < 0){
+                document.write("El valor acumulado es menor a 0");
+            } else {
+                document.write("El valor acumulado es igual a 0");
+            }
+        }
+    </script>
+    
+</body>
+</html>
