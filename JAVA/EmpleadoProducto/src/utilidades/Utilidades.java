@@ -1,7 +1,8 @@
 package utilidades;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.lang.Math;
 
@@ -18,6 +19,12 @@ public final class Utilidades {
         Collections.sort(lista);
         maxvalue = lista.get(0);
         return maxvalue;
+    }
+    
+    public static void horactual() {
+        Calendar calendario = Calendar.getInstance();
+        int hora = calendario.get(Calendar.HOUR_OF_DAY);
+        System.out.println("Hora actual: " + hora);
     }
 
     public static String mayus(String frase) {

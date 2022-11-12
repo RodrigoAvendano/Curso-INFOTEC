@@ -11,5 +11,6 @@ public class Main {
         System.out.println(Utilidades.mayus(cadena));
         System.out.println(Utilidades.minus(cadena));
         System.out.println(Utilidades.aleatorio(1,3));
+        Utilidades.horactual();
     }
 }
