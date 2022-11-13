@@ -5,10 +5,10 @@ public class Producto {
     private String nombre;
     private Integer precio;
     private Integer cantidad;
-    private ArrayList<String> tipo = new ArrayList<>();
+    static private ArrayList<String> tipo = new ArrayList<>();
     static private ArrayList<Boolean> status = new ArrayList<>();
     private String productType;
-    private Boolean flag = false;
+    static private Boolean flag = false;
 
     Producto(String nombre) {
         this.nombre = nombre;
@@ -35,10 +35,10 @@ public class Producto {
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
-    public void listado() {
+    public static void listado() {
         if(!flag) {
             tipo.add("Consumo");
-            //tipo.add("Servicio");
+            tipo.add("Servicio");
             /*  tipo.add("Uso común");
             tipo.add("Emergencia");
             tipo.add("Durable");
@@ -57,8 +57,14 @@ public class Producto {
             tipo.add("De colección");
             tipo.add("Químico");
             tipo.add("Envasado en vidrio"); */
-            for(int x = 1; x <= tipo.size(); x++) {
+            for(int x = 0; x < tipo.size(); x++) {
                 status.add(true);
+                try {
+                    System.out.println("FOR: entrando "+x+"\n");
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    System.out.println("FOR "+e);
+                }
             }
             flag = true;
         }
@@ -68,7 +74,7 @@ public class Producto {
         listado();
         int posicion = status.indexOf(true);//0
         try {
-            System.out.println("POSICION --> "+posicion+"\n");
+            System.out.println("POSICION --> "+posicion);
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println("FAILURE POSITION "+e);
@@ -77,6 +83,12 @@ public class Producto {
         if(posicion >= 0){
             while(Boolean.FALSE.equals(status.get(num))) {
                 num = Utilidades.aleatorio(1,2)-1;
+                try {
+                    System.out.println("Num "+num+"\n");
+                } catch (Exception e) {
+                    // TODO: handle exception
+                    System.out.println("Warning "+num+"\n");
+                }
             }
         }
         if(posicion < 0) {
@@ -90,10 +102,11 @@ public class Producto {
         } else {
             status.set(num, false);//1,2
             try {
-                System.out.println("----1---"+status.get(num-1)+"NUM "+num+" "+status.get(0));
+                System.out.println("----1---"+status.get(num)+" NUM "+num+" "+status.get(0));
+                System.out.println("TYPE: "+tipo.get(num));
             } catch (Exception e) {
                 // TODO: handle exception
-                System.out.println("WARNING");
+                System.out.println("WARNING 2 "+e+"\n"+num+"\nESTADO:"+status.get(num)+" POS: "+posicion);
             }
             return tipo.get(num);
         }
