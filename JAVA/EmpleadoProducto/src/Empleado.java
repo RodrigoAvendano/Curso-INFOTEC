@@ -1,4 +1,4 @@
-public class Empleado {
+public class Empleado implements RecibirPago {
 
     private String nombre;
     private Integer edad;
@@ -68,5 +68,9 @@ public class Empleado {
         if(tipo == 2){
             sout("Tienes autorización para correr");
         }
+    }
+
+    public void recibirpago(int monto) {
+        System.out.println("El pago recibido es de "+monto);
     }
 }

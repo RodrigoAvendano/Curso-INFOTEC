@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-public class Main {
+public class Principal {
     public static void main(String[] args) {
         MetodosyListas user1 = new MetodosyListas("Rodrigo", "Isaac", "Avendaño Ortíz", 24);
         String cadena1 = user1.primerCadena("Día", "Mes", 4, 11);
