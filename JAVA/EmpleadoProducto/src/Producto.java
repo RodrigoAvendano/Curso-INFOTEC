@@ -3,24 +3,31 @@ import utilidades.Utilidades;
 
 public class Producto {
     private String nombre;
+    private String productType;
     private Integer precio;
     private Integer cantidad;
-    static private ArrayList<String> tipo = new ArrayList<>();
-    static private ArrayList<Boolean> status = new ArrayList<>();
-    private String productType;
-    static private Boolean flag = false;
+    private static ArrayList<String> tipo = new ArrayList<>();
+    private static ArrayList<Boolean> status = new ArrayList<>();
+    private static Boolean flag = false;
+    private static Boolean estadoLista = true;
 
     Producto(String nombre) {
-        this.nombre = nombre;
-        this.precio = Utilidades.aleatorio(300,500);
-        this.cantidad = Utilidades.aleatorio(10,15);
         this.productType = selectTipo();
+        if(Boolean.TRUE.equals(estadoLista)) {
+            this.nombre = nombre;
+            this.precio = Utilidades.aleatorio(300,500);
+            this.cantidad = Utilidades.aleatorio(10,15);
+        } else {
+            this.nombre = nombre;
+            this.precio = 0;
+            this.cantidad = 0;
+        }
+        
     }
     public String getNombre() {
         return nombre;
     }
-    public void 
-    Nombre(String nombre) {
+    public void nombre(String nombre) {
         this.nombre = nombre;
     }
     public Integer getPrecio() {
@@ -36,10 +43,10 @@ public class Producto {
         this.cantidad = cantidad;
     }
     public static void listado() {
-        if(!flag) {
+        if(Boolean.FALSE.equals(flag)) {
             tipo.add("Consumo");
             tipo.add("Servicio");
-            /*  tipo.add("Uso común");
+            tipo.add("Uso común");
             tipo.add("Emergencia");
             tipo.add("Durable");
             tipo.add("Especialidad");
@@ -56,59 +63,27 @@ public class Producto {
             tipo.add("Inflamable");
             tipo.add("De colección");
             tipo.add("Químico");
-            tipo.add("Envasado en vidrio"); */
+            tipo.add("Envasado en vidrio");
             for(int x = 0; x < tipo.size(); x++) {
                 status.add(true);
-                try {
-                    System.out.println("FOR: entrando "+x+"\n");
-                } catch (Exception e) {
-                    // TODO: handle exception
-                    System.out.println("FOR "+e);
-                }
             }
             flag = true;
         }
     } 
 
-    private String selectTipo() {
+    private static String selectTipo() {
         listado();
         int posicion = status.indexOf(true);//0
-        try {
-            System.out.println("POSICION --> "+posicion);
-        } catch (Exception e) {
-            // TODO: handle exception
-            System.out.println("FAILURE POSITION "+e);
-        }
-        Integer num = Utilidades.aleatorio(1,2)-1;
+        Integer num = Utilidades.aleatorio(1,20)-1;
         if(posicion >= 0){
             while(Boolean.FALSE.equals(status.get(num))) {
-                num = Utilidades.aleatorio(1,2)-1;
-                try {
-                    System.out.println("Num "+num+"\n");
-                } catch (Exception e) {
-                    // TODO: handle exception
-                    System.out.println("Warning "+num+"\n");
-                }
+                num = Utilidades.aleatorio(1,20)-1;
             }
-        }
-        if(posicion < 0) {
-            try {
-                System.out.println("----0---"+status.get(num-1)+"NUM "+num+" "+status.get(0));
-            } catch (Exception e) {
-                // TODO: handle exception
-                System.out.println("WARNING "+e);
-            }
-            return "Se han seleccionado todos los tipos disponible";
-        } else {
             status.set(num, false);//1,2
-            try {
-                System.out.println("----1---"+status.get(num)+" NUM "+num+" "+status.get(0));
-                System.out.println("TYPE: "+tipo.get(num));
-            } catch (Exception e) {
-                // TODO: handle exception
-                System.out.println("WARNING 2 "+e+"\n"+num+"\nESTADO:"+status.get(num)+" POS: "+posicion);
-            }
             return tipo.get(num);
+        } else {
+            estadoLista = false;
+            return "Se han seleccionado todos los tipos disponible";
         }
     }
 
