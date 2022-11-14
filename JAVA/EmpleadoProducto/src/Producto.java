@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import utilidades.Utilidades;
 
 public class Producto {
     private String nombre;
@@ -88,6 +87,19 @@ public class Producto {
     }
 
     public String getTipo() {
-        return productType;
+        return productType; 
+    }
+
+    public String venta(Empleado empleado){
+        if(empleado.getTipo() == 1 || empleado.getTipo() == 2){
+            if(this.cantidad > 0) {
+                this.cantidad=this.cantidad-1;
+                return "Empleado tipo "+empleado.getTipo()+" vendió 1 "+nombre+"\nQuedán "+cantidad+" disponible(s)\n";
+            } else{
+                return "Este producto esta agotado\n";
+            }
+        } else {
+            return "Empleado tipo "+empleado.getTipo()+": No tienes autorización para vender productos\n";
+        }     
     }
 }

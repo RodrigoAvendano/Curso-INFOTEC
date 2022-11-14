@@ -9,7 +9,7 @@ public class Empleado implements RecibirPago {
         this.nombre = nombre;
         this.edad = edad;
         this.antiguedad = antiguedad;
-        this.tipo = 1;
+        this.tipo = Utilidades.aleatorio(1,3);
     }
 
     public String getNombre() {
@@ -41,32 +41,40 @@ public class Empleado implements RecibirPago {
     }
 
     public void venderProductos() {
-        if(tipo == 1){
-            System.out.println("Vendes productos");
+        if(getTipo() == 1 || getTipo() == 2) {
+            System.out.println("Tienes permitido vender productos");
+        } else {
+            System.out.println("No tienes permitido vender productos");
         }
     }
 
     public void acomodarProductos() {
-        if(tipo == 1 || tipo == 2){
-            System.out.println("Acomodas productos");
+        if(tipo == 1){
+            System.out.println("Tienes permitido acomodar productos");
+        } else {
+            System.out.println("No tienes permitido acomodar productos");
         }
     }
 
     public void  descansar() {
         if(tipo == 1 || tipo == 2){
-            System.out.println("Descansas");
+            System.out.println("Tienes permitido descansar");
         }
     }
 
     public void sentarse() {
         if(tipo == 1){
-            System.out.println("Puedes sentarte");
+            System.out.println("Tienes permitido sentarte");
+        } else {
+            System.out.println("No tienes permitido sentarte");
         }
     }
 
     public void correr() {
         if(tipo == 2){
-            sout("Tienes autorización para correr");
+            System.out.println("Tienes permitido correr");
+        } else {
+            System.out.println("No Tienes permitido correr");
         }
     }
 
