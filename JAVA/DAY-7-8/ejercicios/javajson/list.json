@@ -1,0 +1,19 @@
+{
+    "persona": [
+      {
+        "nombre": "Luis",
+        "tipo": "A+",
+        "peso": "63.8"
+      },
+      {
+        "nombre": "María",
+        "tipo": "B+",
+        "peso": "35.2"
+      },
+      {
+        "nombre": "Xavier",
+        "tipo": "O-",
+        "peso": "78.9"
+      }
+    ]
+  }

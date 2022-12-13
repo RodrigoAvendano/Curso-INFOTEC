@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha y Hora Actual</title>
+    <link rel="stylesheet" href="fechaHora.css">
+</head>
+<body>
+    <div id="fecha"></div>
+    <div id="hora"></div>
+    <script>
+        function mostrarHora() {
+            let hour = new Date();
+            let hora = `${hour.getHours()} : ${hour.getMinutes()} : ${hour.getSeconds()}`;
+            document.getElementById('hora').innerHTML = `<h1 id="rainbow_text_animated">${hora}</h1>`;
+            setTimeout(mostrarHora,1000);
+        }
+        function mostrarFecha() {
+            let fecha = new Date();
+            let dia = `${fecha.getDate()}/${fecha.getMonth()+1}/${fecha.getFullYear()}`;
+            return dia;
+        }
+        mostrarHora();
+        document.getElementById('fecha').innerHTML = `<h1 id="rainbow_text_animated">${mostrarFecha()}</h1>`;
+    </script>
+</body>
+</html>

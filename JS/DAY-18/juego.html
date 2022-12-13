@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juega Ahora</title>
+</head>
+<body>
+    <div id="juego">
+        <label for="name">Ingresa tu nombre</label></br>
+        <input type="text" class="name" name="name" id="name"></br>
+        <label for="name">Adquiere puntos</label></br>
+        <input type="number" class="numbers" name="numbers" id="numbers" value="0"></br>
+        <input type="button" id="points" class="points" value="Aumentar Puntos">
+        <input type="button" id="play" class="play" value="Jugar">
+    </div>
+    <div id="resultados">
+        <h2></h2>
+        <h2></h2>
+        <h1></h1>
+    </div>
+    <script>
+        var jugador = {
+            nombre: '',
+            puntos: 0,
+            impirmir : function() {
+                document.querySelector("#resultados>h2").innerHTML = `Nombre: ${this.nombre}`;
+            },
+            aumentarPuntos : function(cant) {
+                this.puntos = parseInt(this.puntos) + parseInt(cant);
+                document.querySelectorAll("#resultados h2")[1].innerHTML = `Puntos: ${this.puntos}`;
+            },
+            verificar : function() {
+                document.querySelectorAll("#resultados h2")[1].innerHTML = `Puntos: ${this.puntos}`;
+                if(this.puntos > 1000) {
+                    document.querySelector("#resultados>h1").innerHTML = `¡Ganador!`;
+                } else {
+                    document.querySelector("#resultados>h1").innerHTML = `¡Sigue participando!`;
+                }
+            }
+        }
+
+        function aumentar() {
+            let puntos = document.getElementById("numbers").value;
+            jugador.aumentarPuntos(puntos);
+        }
+
+        function jugar() {
+            let name = document.getElementById("name").value;
+            console.log(name);
+            jugador.nombre = name;
+            jugador.impirmir();
+            jugador.verificar();
+        }
+
+        document.getElementById('points').addEventListener('click', aumentar);
+        document.getElementById('play').addEventListener('click', jugar);
+    </script>
+</body>
+</html>

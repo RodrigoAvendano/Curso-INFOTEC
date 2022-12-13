@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    Escribe una cadena:
+    <input type="text" id="myString"></br>
+    <input type="button" value="Enviar" id="enviar">
+    <div>
+        <br>
+        <table border="1">
+            <caption>Métodos de string</caption>
+            <th>Descripción</th>
+            <th>Resultado</th>
+            <tr>
+                <td>Palabra</td>
+                <td id="titulo"></td>
+            </tr>
+            <tr>
+                <td>Cantidad de carácteres</td>
+                <td id="caract"></td>
+            </tr>
+            <tr>
+                <td>Primer carácter</td>
+                <td id="primer"></td>
+            </tr>
+            <tr>
+                <td>Carácteres 1-3</td>
+                <td id="tres"></td>
+            </tr>
+            <tr>
+                <td>Contiene "hola"</td>
+                <td id="hola"></td>
+            </tr>
+            <tr>
+                <td>Mayúsculas</td>
+                <td id="max"></td>
+            </tr>
+            <tr>
+                <td>Minúsculas</td>
+                <td id="min"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.getElementById('enviar').addEventListener('click', words);
+
+        function words() {
+            let input = document.getElementById('myString').value;
+            document.getElementById('titulo').innerHTML = `${input}`;
+            document.getElementById('caract').innerHTML = `${input.length}`;
+            document.getElementById('primer').innerHTML = `${input.charAt(0)}`;
+            document.getElementById('tres').innerHTML = `${input.substring(0,3)}`;
+            if(input.indexOf('hola') != -1) {
+                document.getElementById('hola').innerHTML = `si`;
+            } else {
+                document.getElementById('hola').innerHTML = `no`;
+            }
+            document.getElementById('tres').innerHTML = `${input.substring(0,3)}`;
+            document.getElementById('min').innerHTML = `${input.toLowerCase()}`;
+            document.getElementById('max').innerHTML = `${input.toUpperCase()}`;
+        }
+
+        words();
+    </script>
+</body>
+</html>

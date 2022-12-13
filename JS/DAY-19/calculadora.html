@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="resultado"></div>
+    <script>
+        class Calculadora {
+            constructor(x1,x2) {
+                this.x1 = x1;
+                this.x2 = x2;
+                this.resultado = null;
+            }
+
+            sumar() {
+                this.resultado = this.x1 + this.x2;
+                document.getElementById("resultado").innerHTML += `La suma de ${this.x1} y ${this.x2} es`;
+                this.imprimir();
+            }
+
+            restar() {
+                this.resultado = this.x1 - this.x2;
+                document.getElementById("resultado").innerHTML += `La resta de ${this.x1} y ${this.x2} es`;
+                this.imprimir();
+            }
+
+            multiplicar() {
+                this.resultado = this.x1 * this.x2;
+                document.getElementById("resultado").innerHTML += `La multiplicación de ${this.x1} y ${this.x2} es`;
+                this.imprimir();
+            }
+
+            dividir() {
+                this.resultado = this.x1 / this.x2;
+                document.getElementById("resultado").innerHTML += `La división de ${this.x1} y ${this.x2} es`;
+                this.imprimir();
+            }
+
+            imprimir() {
+                document.getElementById("resultado").innerHTML += ` ${this.resultado}</br>`;
+            }
+        }
+
+        class CalculadoraCientifica extends Calculadora {
+
+            cuadrado() {
+                this.resultado = this.x1 * this.x1;
+                document.getElementById("resultado").innerHTML += `El cuadrado de ${this.x1} es`;
+                this.imprimir();
+            }
+
+            raziCuadrada() {
+                this.resultado = Math.sqrt(this.x1);
+                document.getElementById("resultado").innerHTML += `La raíz de ${this.x1} es`;
+                this.imprimir();
+            }
+        }
+
+        const calculadora1 = new Calculadora(100,200);
+        calculadora1.sumar();
+        calculadora1.restar();
+        calculadora1.multiplicar();
+        calculadora1.dividir();
+
+        const calculadora2 = new CalculadoraCientifica(6,2);
+        calculadora2.sumar();
+        calculadora2.restar();
+        calculadora2.cuadrado();
+        calculadora2.raziCuadrada();
+    </script>
+</body>
+</html>

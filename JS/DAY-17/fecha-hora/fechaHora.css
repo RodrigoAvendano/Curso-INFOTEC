@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(39, 38, 38);
+    position: relative;
+}
+
+#hora {
+    border-radius: 5px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    height: 100px;
+    left: 50%;
+    position: absolute;
+    top: 30px;
+    width: 450px;
+}
+
+h1 {
+    font-size: 90px;
+    margin: 0 0;
+    text-align: center;   
+}
+
+#rainbow_text_animated {
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    background-clip: text;
+    background-size: 400% 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+#fecha {
+    border-radius: 5px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    font-size: 90px;
+    font-weight: bold;
+    height: 100px;
+    left: 10%;
+    margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    width: 450px;
+}
+
+

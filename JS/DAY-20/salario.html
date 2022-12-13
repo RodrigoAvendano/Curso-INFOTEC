@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario</title>
+</head>
+<body>
+    <h2>Listado de sueldos</h2>
+    <div id="sueldo"></div>
+    <script>
+        function cargar(sueldo) {
+            for(let f= 0; f<sueldo.length; f++) {
+                let v = prompt("Ingrese el sueldo");
+                sueldos[f] = parseInt(v);
+            }
+        }
+        function calcularGastos(sueldos) {
+            let total = 0;
+            for(let f = 0; f <sueldos.length; f++) {
+                total = total+sueldos[f];
+                document.getElementById('sueldo').innerHTML += sueldos[f]+"</br>";
+            }
+            document.getElementById('sueldo').innerHTML += "Total de gastos en sueldos: "+total;
+        }
+
+        let sueldos;
+        sueldos = new Array(5);
+        cargar(sueldos);
+        calcularGastos(sueldos);
+    </script>
+</body>
+</html>

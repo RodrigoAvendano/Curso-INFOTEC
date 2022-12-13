@@ -78,11 +78,11 @@ public class Producto {
             while(Boolean.FALSE.equals(status.get(num))) {
                 num = Utilidades.aleatorio(1,20)-1;
             }
-            status.set(num, false);//1,2
+            status.set(num, false);
             return tipo.get(num);
         } else {
             estadoLista = false;
-            return "Se han seleccionado todos los tipos disponible";
+            return "Se han seleccionado todos los tipos disponibles";
         }
     }
 

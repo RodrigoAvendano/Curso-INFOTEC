@@ -1,0 +1,37 @@
+
+.calculadora {
+    align-items: center;
+    border : 1px solid black;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    height: 500px;
+    margin: 0 auto;
+    width: 400px;
+}
+
+.pantalla {
+    height: 50px;
+    width: 90%;
+}
+
+#screen {
+    font-size: 35px;
+    height:100%;
+    letter-spacing: 4px;
+    text-align:right;
+    width:100%;
+}
+
+.teclas {
+    align-items: center;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+}
+
+.numbers {
+    width: 65px;
+    height: 65px;
+    margin: 10px;
+}

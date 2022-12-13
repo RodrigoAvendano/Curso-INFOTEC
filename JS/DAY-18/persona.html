@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona</title>
+</head>
+<body>
+    <div id="personas"></div>
+    <script>
+        function Persona(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.impirmirNOmbre = function() {
+                document.getElementById("personas").innerHTML = `${this.nombre} tiene una edad de ${this.edad}</br>`
+            }
+        }
+        let vector = new Array(4);
+        vector[0] = new Persona('Juan',44);
+        vector[1] = new Persona('Ana',22);
+        vector[2] = new Persona('Pedro',44);
+        vector[3] = new Persona('Marcos',18);
+        let edad = 0;
+
+        document.getElementById("personas").innerHTML = `Personas de mayor edad:</br>`;
+        vector.forEach(element =>{
+            if(element.edad >= edad) {
+                edad = element.edad;
+                document.getElementById("personas").innerHTML += `${element.nombre} de ${element.edad} años. </br>` ;
+            } 
+        });
+    </script>
+</body>
+</html>

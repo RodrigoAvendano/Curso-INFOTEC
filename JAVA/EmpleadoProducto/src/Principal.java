@@ -20,6 +20,7 @@ public class Principal {
         empleado1.descansar();
         empleado1.sentarse();
         empleado1.correr();
+        empleado1.recibirpago(6000);
 
         System.out.println("\nNombre del empleado: "+empleado2.getNombre()+"\nEdad: "+empleado2.getEdad()+"\nTipo: "+empleado2.getTipo()+
         "\nAntiguedad: "+empleado2.getAntiguedad()+"\n");
@@ -28,6 +29,7 @@ public class Principal {
         empleado2.descansar();
         empleado2.sentarse();
         empleado2.correr();
+        empleado2.recibirpago(2000);
 
         System.out.println("\nNombre del empleado: "+empleado3.getNombre()+"\nEdad: "+empleado3.getEdad()+"\nTipo: "+empleado3.getTipo()+
         "\nAntiguedad: "+empleado3.getAntiguedad()+"\n");
@@ -36,13 +38,13 @@ public class Principal {
         empleado3.descansar();
         empleado3.sentarse();
         empleado3.correr();
+        empleado3.recibirpago(3000);
 
         System.out.println("--------- PRODUCTOS ---------");
 
 
         System.out.println("\nNombre del Producto: "+producto1.getNombre()+"\nPrecio: "+producto1.getPrecio()+"\nCantidad: "+producto1.getCantidad());
         System.out.println("Tipo de Producto: "+producto1.getTipo()+"\n");
-        
 
         System.out.println("Nombre del Producto: "+producto2.getNombre()+"\nPrecio: "+producto2.getPrecio()+"\nCantidad: "+producto2.getCantidad());
         System.out.println("Tipo de Producto: "+producto2.getTipo()+"\n");

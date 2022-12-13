@@ -1,0 +1,19 @@
+{
+    "palabras": [
+      {
+        "espanol": "gato",
+        "english": "cat",
+        "frances": "chat"
+      },
+      {
+        "espanol": "perro",
+        "english": "dog",
+        "frances": "mais"
+      },
+      {
+        "espanol": "mariposa",
+        "english": "butterfly",
+        "frances": "papillon"
+      }
+    ]
+  }

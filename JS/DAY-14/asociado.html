@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo asociado</title>
+    <style>
+        .btn {
+            width: 50px;
+            height: 50px;
+        }
+        #resultado {
+            font-size: 40px;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="button" class="btn" name="boton0" id="boton0" value="0">
+    <input type="button" class="btn" name="boton1" id="boton1" value="1">
+    <input type="button" class="btn" name="boton2" id="boton2" value="2">
+    <input type="button" class="btn" name="boton3" id="boton3" value="3">
+    <input type="button" class="btn" name="boton4" id="boton4" value="4">
+    <input type="button" class="btn" name="boton5" id="boton5" value="5">
+    <input type="button" class="btn" name="boton6" id="boton6" value="6">
+    <input type="button" class="btn" name="boton7" id="boton7" value="7">
+    <input type="button" class="btn" name="boton8" id="boton8" value="8">
+    <input type="button" class="btn" name="boton9" id="boton9" value="9">
+    <br/>
+    <div id="resultado"></div>
+    <script>
+        for(let x = 0; x<= 9; x++) {
+            document.getElementById('boton'+x).addEventListener('click', presion);
+        }
+        function presion(evt) {
+            document.getElementById('resultado').innerHTML = document.getElementById('resultado').innerHTML+evt.target.value;
+            //document.getElementById('resultado').append();
+        }
+    </script>
+    
+</body>
+</html>

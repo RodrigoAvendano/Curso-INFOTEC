@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Objetos Literales</title>
+</head>
+<body>
+    <script>
+        let cliente1 = {
+            nombre : 'Juan',
+            deposito : 0,
+            imprimir : function() {
+                document.write(this.nombre+'</br>');
+                document.write(this.deposito+'</br>');
+            },
+            depositar : function(monto) {
+                this.deposito = this.deposito + monto;
+            },
+            extraer : function(monto) {
+                this.deposito = this.deposito - monto;
+            }
+        };
+        cliente1.imprimir();
+        cliente1.depositar(1000);
+        document.write("Estado luego del depósito de 1000 pesos </br>");
+        cliente1.imprimir();
+        cliente1.extraer(200);
+        document.write("Estado luego de extraer 200 pesos </br>");
+        cliente1.imprimir();
+    </script>
+</body>
+</html>

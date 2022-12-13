@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+</head>
+<body>
+    <div id="datos"></div>
+    <script>
+        function Cliente(nombre, saldo) {
+            this.nombre = nombre;
+            this.saldo = saldo;
+            this.depositar = depositar;
+            this. retirar = retirar;
+        }
+
+        function depositar(cantidad) {
+            this.saldo += cantidad;
+        }
+
+        function retirar(cantidad) {
+            this.saldo -= cantidad;
+        }
+
+        let cliente1 = new Cliente('Luis', 5000);
+        document.getElementById('datos').innerHTML = `Nombre del cliente: ${cliente1.nombre} </br>
+        Saldo Actual: ${cliente1.saldo} </br>`;
+        cliente1.depositar(2000);
+        document.getElementById('datos').innerHTML += `Saldo después de depositar: ${cliente1.saldo} </br>`;
+        cliente1.retirar(1500);
+        document.getElementById('datos').innerHTML += `Saldo después de retirar: ${cliente1.saldo} </br>`;
+
+
+    </script>
+    
+</body>
+</html>

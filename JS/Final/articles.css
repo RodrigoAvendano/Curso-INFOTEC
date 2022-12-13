@@ -1,0 +1,167 @@
+body {
+    background-color: rgb(44, 40, 40);
+}
+
+table {
+    background-color: white;
+    border: none;
+    width: 100%;
+}
+
+table caption {
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+tr, th, td {
+    border: none;
+}
+
+td {
+    border-right: 1px solid gray;
+    height: 30px;
+}
+
+td:nth-child(5) {
+    border-right: none;
+}
+
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px auto;
+    text-align: center;
+    width: 700px;
+}
+
+.header {
+    background-color: rgb(42, 95, 165);
+    color: white;
+}
+
+.par {
+    background-color: rgb(218, 216, 226);
+}
+
+form {
+    align-items: center;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+
+input {
+    margin:5px auto;
+}
+
+label {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    width: 48%;
+}
+
+input[type = text], input[type = number]{
+    width: 45%;
+    height: 18px;
+}
+
+input[type = button] {
+    background: linear-gradient(
+        rgb(46, 87, 223),
+        rgb(175, 167, 167)
+    );
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+    height: 30px;
+    width: 80px;
+}
+
+input[type = button]:hover {
+    background: linear-gradient(
+        rgb(175, 167, 167),
+        rgb(46, 87, 223)
+    );
+}
+
+td .imgtd {
+    width: 250px;
+}
+
+.form {
+    align-items: center;
+    background:
+    linear-gradient(
+    rgba(96, 113, 196, 0.75),
+    rgba(91, 43, 119, 0.95));
+    border-radius: 10px;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 25px auto;
+    padding-bottom: 60px;;
+    padding-top: 60px;
+    width: 400px;
+    height: 80px;
+}
+
+.fa-trash {
+    color:rgb(102, 7, 7);
+    cursor: pointer;
+}
+
+.fa-file-pen {
+    color:rgb(54, 118, 214);
+    cursor: pointer;
+}
+
+.imgtd {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 45px;
+}
+
+.products {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0px auto;
+    margin-top: 50px; 
+    justify-content: space-between;
+    width: 700px;
+}
+
+.imgprod {
+    align-items: center;
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin: 40px 20px;
+    height: 100px;
+    width: 25%;
+}
+
+.imgprod img {
+    height: 100%;
+    width: 100%;
+}
+
+.imgprod label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px auto;
+    text-align: center;
+    text-transform: capitalize;
+}
+

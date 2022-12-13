@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+</head>
+<body>
+    <div id="divTabla"></div>
+    <script>
+        function tablas(num = 2, cantidad = 10) {
+            let tabla = '';
+            tabla += `<strong>Tabla del ${num}</strong></br>`;
+            for(let x =1; x<=cantidad; x++) {
+                tabla += `${num} x ${x} = ${x*num} </br>`
+            }
+            return tabla;
+        }
+        document.getElementById('divTabla').innerHTML = tablas();
+        document.getElementById('divTabla').innerHTML += tablas(9);
+        document.getElementById('divTabla').innerHTML += tablas(5,5);
+    </script>    
+</body>
+</html>

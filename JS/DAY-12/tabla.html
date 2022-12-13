@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+</head>
+<body>
+    <script>
+        function calcularTabla() {
+            let re = /[(0-9)]/;
+            let valor = parseInt(prompt("Ingrese que tabla de multiplicar desea obtener"));
+            let estado = re.test(valor);
+            if(!estado){
+                do {
+                    valor = parseInt(prompt("Ingrese que tabla de multiplicar desea obtener"));
+                    estado = re.test(valor);
+                } while (!estado);
+            }
+
+            for(let x = 1; x <= 10; x++) {
+                let tabla = x*valor;
+                document.write(valor+" x "+x+" = "+tabla+"<br/>");
+            }
+            
+        }
+        calcularTabla();
+    </script>
+</body>
+</html>

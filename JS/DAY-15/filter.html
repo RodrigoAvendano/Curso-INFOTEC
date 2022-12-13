@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ordenados"><h3>Lista ordenada</h3><br></div></br>
+    <div id="pares"><h3>Pares<br></h3></div></br>
+    <div id="impares"><h3>Impares<br></h3></div></br>
+    <div id="random"></div>
+    <script>
+        function ordenar() {
+            const vector = [11,50,1,83,22,30];
+            const ol = vector.sort((a,b)=>{
+                if(a>b) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            });
+            return ol;
+        }
+
+        function filtrar(vector,num) {
+            const newvector = Object.values(vector);
+            const par = vector.filter(element => {return element %2==0});
+            const impar = vector.filter(element => {return element %2 != 0});
+            if(num) {
+                return par
+            } else {
+                return impar
+            }
+        }
+        
+        let re = /([0-9]+)/;
+        let estado = true;
+        let num = parseInt(prompt("Ingresa número"));
+        estado = re.test(num);
+
+        if(!estado) {
+            alert("Ingresa un número entero");
+            do{
+                num = parseInt(prompt("Error. Ingresa número"));
+                estado = re.test(num);
+            }while(!estado);
+        }
+
+        const aleatorio = valor => 
+        Math.trunc(Math.random()*valor)+1;
+
+        const ordenados = ordenar();
+        document.getElementById('ordenados').innerHTML += ordenados ;
+        document.getElementById('pares').innerHTML += filtrar(ordenados,true);
+        document.getElementById('impares').innerHTML += filtrar(ordenados,false);
+        document.getElementById('random').innerHTML += '<h3>Número aleatorio del 1 al ' + num+ '</h3>' + aleatorio(num);
+        
+    </script>
+</body>
+</html>

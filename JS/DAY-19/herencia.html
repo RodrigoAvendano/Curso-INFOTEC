@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+</head>
+<body>
+    <div id="datos"></div>
+    <script>
+        class Persona {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+
+            imprimir() {
+                document.getElementById("datos").innerHTML += "Nombre: "+this.nombre+"</br>";
+                document.getElementById("datos").innerHTML += "Edad: "+this.edad+"</br>";
+            }
+        }
+
+        class Empleados extends Persona {
+            constructor(nombre, edad, sueldo) {
+                super(nombre, edad);
+                this.sueldo = sueldo;
+            }
+            imprimir() {
+                super.imprimir();
+                document.getElementById("datos").innerHTML += "Sueldo: "+this.sueldo+"</br>";
+            }
+            pagarImpuestos() {
+                if(this.sueldo > 5000) {
+                    document.getElementById("datos").innerHTML += "Paga impuestos</br>";   
+                } else {
+                    document.getElementById("datos").innerHTML += "No paga impuestos</br>";  
+                }
+            }
+        }
+
+        const persona1 = new Persona('Juan', 44);
+        persona1.imprimir();
+        document.getElementById("datos").innerHTML += "</br>";
+
+        const empleado1 = new Empleados('Juan',44,7000);
+        empleado1.imprimir();
+        empleado1.pagarImpuestos();
+    </script>
+</body>
+</html>

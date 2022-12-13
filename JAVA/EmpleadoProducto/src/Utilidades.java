@@ -8,6 +8,7 @@ import java.lang.Math;
 public final class Utilidades {
 
     static int contador = 0;
+    
     public static Integer contar() {
         return contador;
     }

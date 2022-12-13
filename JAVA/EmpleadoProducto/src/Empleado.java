@@ -59,6 +59,8 @@ public class Empleado implements RecibirPago {
     public void  descansar() {
         if(tipo == 1 || tipo == 2){
             System.out.println("Tienes permitido descansar");
+        } else {
+            System.out.println("No tienes permitido descansar");
         }
     }
 

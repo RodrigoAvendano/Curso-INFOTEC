@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Rest</title>
+</head>
+<body>
+    <div id="list">
+
+    </div>
+    <script>
+        function ordenar(...enteros) {
+            return enteros.sort(
+                function(x,y){
+                    if(x>y) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
+                }
+            )
+        }
+        const elementOrder = ordenar(10,3,50,67,2,21);
+        document.getElementById("list").innerHTML = elementOrder.toString();
+    </script>
+</body>
+</html>

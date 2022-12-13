@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Función anónima como parámetro</title>
+</head>
+<body>
+    <dvi id="div1"></dvi>
+    <div id="div2"></div>
+    <script>
+        function calcular(x,y,foo) {
+            let s = foo(x,y);
+            return s;
+        }
+        let s1 = calcular(10,5, function(v1,v2){
+            return v1+v2;
+        });
+        let s2 = calcular(10,5, function(v1,v2){
+            return v1-v2;
+        });
+        document.getElementById('div1').innerHTML = s1;
+        document.getElementById('div2').innerHTML = s2;
+    </script>
+</body>
+</html>

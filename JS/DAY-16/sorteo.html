@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo</title>
+</head>
+<body>
+    Nombre: <input type="text" name="nombre" id="persona"></br>
+    Número: <input type="number" name="numero" id="number"></br>
+    <input type="button" value="Participar" id="enviar"></br>
+    <div id="resultados"></div>
+    <div id="ganador"></div>
+    <hr>
+    <script>
+        //Número de Quiniela
+        function NumeroQuiniela(nombre) {
+            this.nombre = nombre;
+            this.cargarNumero = function() {
+                this.numero = parseInt(prompt('¿Qué número de quiniela deseas '+this.nombre+'?'));
+            }
+            this.giveNumber = function(number){
+                this.numero = number;
+            }
+            this.comprobarNumero = function(num) {
+                if(this.numero == num) {
+                    return true
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        //clase bolillero
+        function Bolillero() {
+            this.numero = 1;
+            this.sortear = function() {
+                this.numero = parseInt(Math.random()*10)+1;
+            }
+        }
+
+        //bloque principal
+        let numeroquiniela1 = new NumeroQuiniela("Raúl");
+        numeroquiniela1.cargarNumero();
+        let numeroquiniela2 = new NumeroQuiniela("Sonia");
+        numeroquiniela2.cargarNumero();
+
+        let bolillero = new Bolillero();
+        bolillero.sortear();
+        document.write('Número sorteado: '+bolillero.numero+'</br>');
+        document.write(numeroquiniela1.nombre+' eligió '+numeroquiniela1.numero+'</br>');
+        document.write(numeroquiniela2.nombre+' eligió '+numeroquiniela2.numero+'</br>');
+
+        if(numeroquiniela1.comprobarNumero(bolillero.numero)) {
+            document.write(`¡¡¡${numeroquiniela1.nombre} has ganado!!!`);
+        }
+        if(numeroquiniela2.comprobarNumero(bolillero.numero)) {
+            document.write(`¡¡¡${numeroquiniela2.nombre} has ganado!!!`);
+        }
+
+        //inputs
+        document.getElementById('enviar').addEventListener('click', datos);
+        function datos() {
+            let in1 = document.getElementById('persona').value;
+            let in2 = document.getElementById('number').value;
+
+            let numeroquiniela = new NumeroQuiniela(in1,true,in2);
+            numeroquiniela.giveNumber(in2);
+            let bolillero1 = new Bolillero();
+            bolillero1.sortear();
+            document.getElementById('resultados').innerHTML = `${in1} has seleccionado el número ${in2}.</br>El número ganador es ${bolillero1.numero}`;
+            if(numeroquiniela.comprobarNumero(bolillero1.numero)) {
+                document.getElementById('ganador').innerHTML = `¡Felicidades! Has ganado`;
+            }else {
+                document.getElementById('ganador').innerHTML = `¡Sigue participando!`;
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferencias</title>
+</head>
+<body>
+    <script>
+        var objeto1 = {
+            x : 10, 
+            metodo1 : function() {
+                alert(this.x);
+            },
+            metodo2 : ()=> {
+                alert(this.x);
+            }
+        }
+        objeto1.metodo1();
+        objeto1.metodo2();
+        //La función Math.trunc() devuelve la parte entera de un numero removiendo cualquier dígito decimal.
+
+        const aleatorio = valor => 
+        Math.trunc(Math.random()*valor)+1;
+        alert(aleatorio(3));
+        document.write(aleatorio(4));
+    </script>
+</body>
+</html>

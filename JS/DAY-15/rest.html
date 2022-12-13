@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones con parámetros Rest</title>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <script>
+        function sumar(...valores) {
+            let suma = 0;
+            for(let x = 0; x<arguments.length; x++) {
+                suma += arguments[x];
+            }
+            return suma;
+        }
+        document.getElementById("div1").innerHTML = sumar(45,3,2);
+        document.getElementById("div1").innerHTML += '</br>' + sumar(25,6,9,1,7,3,24);
+    </script>
+</body>
+</html>

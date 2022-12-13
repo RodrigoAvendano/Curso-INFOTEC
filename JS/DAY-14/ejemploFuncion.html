@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de funcion</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        function operacion(x,y,foo) {
+            let resultado = foo(x,y);
+            return resultado;            
+        }
+        function sumar(v1,v2) {
+            return v1+v2;
+        }
+        function restar(v1,v2) {
+            return v1-v2;
+        }
+        function multiplicar(v1,v2) {
+            return v1*v2;
+        }
+        function dividir(v1,v2) {
+            return v1/v2;
+        }
+        let div = document.getElementById('div1')
+        let s1 = operacion(10,2,sumar);
+        div.innerHTML = 'Suma: '+s1;
+        let s2 = operacion(10,2,restar);
+        div.innerHTML +='</br>Resta: '+s2;
+        let s3 = operacion(10,2,multiplicar);
+        div.innerHTML += '</br>Multiplicación: '+s3;
+        let s4 = operacion(10,2,dividir);
+        div.innerHTML += '<br>División: '+s4;
+    </script>
+</body>
+</html>
